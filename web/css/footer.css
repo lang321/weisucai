@@ -1,0 +1,19 @@
+.footer{
+    height:200px;
+    background-color: rgba(100,100,100,0.3);
+    display: flex;
+    flex-direction: row;
+    padding-right:10%;
+    padding-left:10%;
+}
+.helper{
+    width:25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.helper a{
+    display: inline-flex;
+    color:rgba(100,100,100,0.5);
+    margin:5px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="/js/bootstrap/jquery.js"></script>
+    <script src="/js/jquery.serializejson.js"></script>
+</head>
+<body>
+    <div>
+        <form id="form1">
+            <label>username:</label><input type="text" name="username" placeholder="username" /><br>
+            <label>password:</label><input type="password" name="password" placeholder="password" /><br>
+            <input type="button" id="btnRegister" value="login" />
+        </form>
+    </div>
+
+    <script>
+        $('#btnRegister').click(function(){
+            console.log(JSON.stringify($('#form1').serializeJSON()))
+            $.ajax({
+                type: 'post',
+                url: '/loginPro',
+                contentType:'application/json;charset=utf-8',
+                async: true,
+                //设置验证方式，设置请求头
+                data: JSON.stringify($('#form1').serializeJSON()),
+                success: function (result) {
+                    if(result=='ok'){
+                        alert('登录成功')
+                    }else{
+                        console.log('失败')
+                    }
+                },
+                error: function () {
+                    console.log('error')
+                }
+            });
+        })
+
+    </script>
+</body>
+</html>

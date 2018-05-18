@@ -1,0 +1,111 @@
+.menu-right{
+    margin-right:10px;
+}
+.login-toggle{
+    display: none !important;
+}
+a:hover{
+    text-decoration: none !important;
+}
+.remove{
+    display: none;
+}
+#img{
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 4px;
+}
+.nav-size .noLogin{
+    /*margin:0 0 30px 30px;*/
+}
+
+/*下拉菜单*/
+.dropdown{
+    position: relative;
+}
+.topbar-info-dropdown-memu{
+    position: absolute;
+    right:-20px;
+    top:45px;
+    z-index: 1;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    font-size: 12px;
+    min-width: 100%;
+    white-space: nowrap;
+    float: left;
+    display: block;
+    /*visibility: hidden;*/
+}
+.topbar-user-info{
+    text-align: center;
+    padding-top: 16px;
+    border: 1px solid #eaeaea;
+}
+.topbar-user-entrance-list{
+    width: 280px;
+    height:170px;
+    padding: 8px 15px;
+    border: 1px solid #eaeaea;
+    /*display: flex;*/
+}
+.topbar-user-entrance{
+    width: 80px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    color: #333;
+    transition: background .15s;
+    border-radius: 2px;
+    letter-spacing: .02em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction:column;
+}
+a.topbar-user-entrance:hover{ color:#333;
+    background-color: rgba(100,100,100,.1);
+}
+.topbar-user .topbar-user-entrance-logo {
+    font-size: 20px;
+    margin: 8px auto 4px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    color: #788d9b;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 658246 */
+    src: url('//at.alicdn.com/t/font_658246_e6kvolxc2zsn61or.eot');
+    src: url('//at.alicdn.com/t/font_658246_e6kvolxc2zsn61or.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_658246_e6kvolxc2zsn61or.woff') format('woff'),
+    url('//at.alicdn.com/t/font_658246_e6kvolxc2zsn61or.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_658246_e6kvolxc2zsn61or.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.logo1:before {
+    /*content: url(/images/icons/sailer.png);*/
+    content: '\e880';
+}
+.logo2:before {
+    content: '\e611';
+}
+.logo3:before {
+    content: '\e627';
+}
+.logo4:before {
+    content: '\e600';
+}
+.logo5:before {
+    content: '\e632';
+}
+
+/* 下拉按钮样式 */

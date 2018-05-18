@@ -1,0 +1,32 @@
+.search{
+    display: flex !important;
+    flex-direction: row;
+}
+.logo{
+    display: flex;
+}
+.searchInput{
+    display: flex;
+    width:100%;
+}
+.searchInput input{
+    width:85%;
+    height:40px;
+    margin-left:4%;
+    border-radius: 3px;
+}
+.searchInput span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: Microsoft Yahei;
+    font-size: 19px;
+    height:40px;
+    width:50px;
+    background-color: #61c178;
+}
+
+#articleManager{
+    margin-top:50px;
+}

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -18,32 +20,19 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public String register(){
-        return "/user/register.html";
-    }
-    @RequestMapping(value = "/registerPro",method = RequestMethod.POST)
+    @RequestMapping(value = "/isLogin",method = RequestMethod.POST)
     @ResponseBody
-    public Object registerPro(@RequestBody User user){
-        System.out.println(user);
-        int rs = 0;
-        try {
-            rs = userService.saveUser(user);
-        } catch (Exception e) {
-            e.printStackTrace();
+    public Integer isLogin(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        if(user==null){
+            return 0;
         }
-        if(rs==1)
-            return "ok";
-        return "error";
+        return 1;
+    }
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
+    public String exit(HttpServletRequest request){
+        request.getSession().setAttribute("user",null);
+        return "redirect:/index.html";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String login(){
-        System.out.println("login");
-        return "/user/login.html";
-    }
-    @RequestMapping(value = "/loginPro",method = RequestMethod.POST)
-    public String loginPro(User user){
-        return "";
-    }
 }

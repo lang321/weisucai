@@ -1,0 +1,45 @@
+#rank-container{
+    background: url('/images/designer/rank-bg.png');
+}
+.bg-gray{
+    background-color: rgba(100,100,100,0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#rank-left{
+    /*padding-right: 20px;*/
+}
+/*高度*/
+tbody tr{
+    height: 100px;
+}
+/*水平、垂直居中*/
+td,th{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+/*设计师排名数字*/
+/*span*/
+.ranking-num{
+    display: inline-block;
+    width:47px;
+    height:47px;
+    border-radius: 50%;
+    color:white;
+    line-height:47px;
+    font-size:28px;
+    background-color: lightblue;
+}
+tbody tr:nth-child(2) .ranking-num,tbody tr:nth-child(3) .ranking-num{
+    background-color: #e9602a;
+}
+tbody tr:nth-child(1) .ranking-num{
+    background-color: red;
+}
+/*图片*/
+tbody img{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}

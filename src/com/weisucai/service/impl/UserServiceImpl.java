@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(isolation = Isolation.DEFAULT, propagation = Propagation.REQUIRED)
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
@@ -20,14 +19,29 @@ public class UserServiceImpl implements UserService {
         this.userDao = userDao;
     }
 
-//    @Transactional
+    @Transactional(isolation = Isolation.DEFAULT, propagation = Propagation.REQUIRED)
     @Override
     public int saveUser(User user) throws Exception {
         int rs = 0;
-        userDao.saveUser(user);
+//        userDao.saveUser(user);
 //        userDao222.toString();
-        user.setPassword("11111111111111111111111111111111111111111111111111111111111111111111");
         rs = userDao.saveUser(user);
         return rs;
+    }
+
+    /**
+     * 根据手机号和密码登录
+     * @param user
+     * @return
+     */
+    @Override
+    public User login(User user) {
+        User uRs = userDao.findUser(user);
+        return uRs;
+    }
+
+    @Override
+    public User findUserByOpenId(User user) {
+        return userDao.selectByOpenId(user);
     }
 }
